@@ -12,14 +12,15 @@ const randChoice = (arr) => arr[Math.floor(Math.random()*arr.length)];
 
 const people = [];
 
-let i;
 for (i=0; i<20; i++){
-    const randomPerson = new Object();
+    let i;
+    const randomPerson = {};
     randomPerson.gender = randChoice(genders);
     randomPerson.firstName = randomPerson.gender === 'M' ? randChoice(maleNames) : randChoice(femaleNames);
     randomPerson.lastName = randChoice(lastNames);
     randomPerson.age = Math.floor(Math.random()*(78-18+1)+18);
     randomPerson.email = `${(randomPerson.firstName).toLowerCase()}.${(randomPerson.lastName).toLowerCase()}@gmail.com`;
+
     people.push(randomPerson);
 }
 
